@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "webpack --watch --config ./webpack.config.js"
+    "server": "node koa.js",
+    "webpack": "webpack --watch --config ./webpack.config.js"
   },
   "dependencies": {
     "koa": "^2.11.0",
