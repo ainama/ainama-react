@@ -1,18 +1,20 @@
 const webpack = require('webpack');
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
 
-  // mode: 'development',
-  mode: 'production',
+  mode: 'development',
+  // mode: 'production',
 
   entry: {
-    build: './index.js'
+    app: './index.js'
   },
 
   output: {
-    path: path.resolve(__dirname, './'),
-    filename: 'dev/build.js'
+    path: path.resolve(__dirname, 'dev'),
+    filename: 'js/[name].bundle.js',
+    chunkFilename: 'js/[name].chunk.js'
   },
 
   module: {
@@ -30,24 +32,21 @@ module.exports = {
       {
         test: /\.(css|scss)$/,
         use: [
-          { loader: 'style-loader' },
+          { loader: MiniCssExtractPlugin.loader },
           { loader: 'css-loader' },
           { loader: 'sass-loader' }
-        ]
-      },
-      {
-        test: /\.(png|jpg|gif|ttf|otf)$/i,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 100000
-            }
-          }
         ]
       }
     ]
   },
+
+  plugins: [
+    new MiniCssExtractPlugin({
+      path: path.resolve(__dirname, 'dev'),
+      filename: 'css/[name].bundle.css',
+      chunkFilename: 'css/[name].chunk.css'
+    }),
+  ],
 
   performance: {
     hints: false

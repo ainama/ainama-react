@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
+
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+
 import * as actions from '../actions/index.js';
-import '../sass/index.scss';
+
+import '../sass/page/app.scss';
+
+const ComponentOne = lazy(() => import('../component/componentOne.jsx'));
+const ComponentTwo = lazy(() => import('../component/componentTwo.jsx'));
 
 class App extends React.Component {
   constructor(props,context) {
     super(props,context)
     this.state = {
-      todoValue: ''
+      todoValue: '',
+      showComponentOne: false,
+      showComponentTwo: false
     };
   }
 
@@ -32,6 +40,12 @@ class App extends React.Component {
 
   _todoClick(i) {
     this.props.actions.selectTodoAction(i);
+  }
+
+  showComponent(name, number) {
+    this.setState({
+      [name]: !this.state[name]
+    });
   }
 
   render() {
@@ -63,6 +77,25 @@ class App extends React.Component {
               </div>
             );
           })
+        }
+
+        <button onClick = { () => this.showComponent('showComponentOne', 1) }>显示/隐藏组件1</button>
+        <button onClick = { () => this.showComponent('showComponentTwo', 2) }>显示/隐藏组件2</button>
+
+        {
+          this.state.showComponentOne && (
+            <Suspense fallback = { null }>
+              <ComponentOne />
+            </ Suspense>
+          )
+        }
+
+        {
+          this.state.showComponentTwo && (
+            <Suspense fallback = { null }>
+              <ComponentTwo />
+            </ Suspense>
+          )
         }
 
       </div>
