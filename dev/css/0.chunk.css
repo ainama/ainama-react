@@ -1,7 +1,97 @@
-.component-one {
-  border: 1px solid #abc111;
-  margin-top: 20px;
-  padding: 10px;
+.form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 15px; }
+
+.input {
+  width: 220px;
+  height: 30px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 18px;
   font-size: 12px;
-  color: #abc111; }
+  color: #141414;
+  line-height: 30px; }
+  .input:hover {
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.05); }
+  .input:active {
+    border: 1px solod #4990e2;
+    box-shadow: 0 0 4px 1px rgba(73, 144, 226, 0.3); }
+
+.btn {
+  box-sizing: border-box;
+  width: 88px;
+  height: 30px;
+  background-color: #eee;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.06);
+  font-size: 14px;
+  color: #464646;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  user-select: none; }
+  .btn:hover {
+    background-color: #f6f6f6;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06); }
+  .btn:active {
+    background-color: #e0e0e0;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1); }
+
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 332px;
+  height: 36px;
+  padding-left: 8px;
+  padding-right: 8px; }
+
+.flex {
+  flex: 1;
+  display: flex;
+  flex-direction: row; }
+
+.item-un-select {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #ffc000;
+  border-radius: 3px;
+  margin-right: 20px; }
+
+.item-select {
+  width: 18px;
+  height: 18px;
+  background-image: url("/images/select.png");
+  background-size: 18px 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 20px; }
+
+.item-todo {
+  max-width: 238px;
+  font-size: 16px;
+  color: #242243;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+.item-todo-active {
+  max-width: 238px;
+  font-size: 16px;
+  color: rgba(72, 69, 120, 0.5);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-decoration: line-through; }
+
+.item-time {
+  font-size: 12px;
+  color: rgba(72, 69, 120, 0.5); }
 

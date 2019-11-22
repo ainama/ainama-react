@@ -1,7 +1,7 @@
 {
   "scripts": {
     "server": "node koa.js",
-    "webpack": "webpack --watch --config ./webpack.config.js"
+    "start": "webpack --watch --config ./webpack.config.js"
   },
   "dependencies": {
     "koa": "^2.11.0",
@@ -9,7 +9,7 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-redux": "^6.0.0",
-    "react-router-dom": "^4.3.1",
+    "react-router-dom": "^5.1.2",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0"

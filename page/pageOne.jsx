@@ -1,7 +1,6 @@
 import React from 'react';
 
 import '../sass/page/pageOne.scss';
-import data from './library.min.js';
 
 export default class Page1 extends React.Component {
   constructor(props,context) {
